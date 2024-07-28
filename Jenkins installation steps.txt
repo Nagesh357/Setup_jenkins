@@ -1,7 +1,7 @@
 Jenkins Installtion steps:-
 - Download below packages:
-  - "jdk-11" or above version
-  - Jenkins latest ( prefer LTS)
+  - "jdk-11" or above version Ex: jdk-17.0.11_linux-x64_bin.rpm
+  - Jenkins latest-prefer LTS Ex: jenkins-2.452.3-1.1.noarch.rpm
 
 - Install jdk & Jenkins
   $ rpm -ivh jdk-17.0.11_linux-x64_bin.rpm
