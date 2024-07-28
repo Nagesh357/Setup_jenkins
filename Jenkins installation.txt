@@ -1,0 +1,36 @@
+Jenkins Installtion steps:-
+- Download below packages:
+  - "jdk-11" or above version
+  - Jenkins latest ( prefer LTS)
+
+- Install jdk & Jenkins
+  $ rpm -ivh jdk-17.0.11_linux-x64_bin.rpm
+  $ rpm -ivh jenkins-2.452.3-1.1.noarch.rpm
+ 
+  - verify jdk & jenkins installed or not
+  $ rpm -q jdk-17
+  $ rpm -q jenkins
+
+-  launch jenkins
+  $ systemctl start jenkins
+  $ systemctl enable jenkins
+
+- Jenkins works on 8080 protocol & uses TCP protocol
+  To connect put -> Ip:8080 in browser
+
+- Firewall won't allow login jenkins remotely by default & block port 8080.
+ - To connect login jenkins remotely
+ - Add port 8080 & service "http" to the (active zone) firewall to connect jenkins remotely
+    $ firewall-cmd --zone=public --add-service=http
+    $ firewall-cmd --zone=public --add-port=8080/tcp
+
+  - list ports & services addes
+    $ firewall-cmd --list-services
+    $ firewall-cmd --list-ports
+
+    ( or just simply stop firewall service ) to use jenkins remotely
+
+Note: This configuration is non-persistent. Use --permanent flag to persist the settings.
+
+  - Restart firewalld service to apply changes
+    $ systemctl restart firewalld.service
