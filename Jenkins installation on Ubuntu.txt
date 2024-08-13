@@ -1,13 +1,13 @@
-Jenkins Installtion steps:-
+- Update repositories
+  $ sudo apt update -y
+  $ sudo apt upgrade -y
+
+- Jenkins Installtion steps:-
 - Download jenkins packages. prefer LTS
   $ sudo wget https://get.jenkins.io/debian-stable/jenkins_2.462.1_all.deb
 
   - Check jenkins downloded or not
-  $ ls  
-
-- Update repositories
-  $ sudo apt update -y
-  $ sudo apt upgrade -y
+  $ ls
   
 - Install jdk & Jenkins
   $ sudo apt install default-jre
