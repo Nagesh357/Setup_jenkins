@@ -1,0 +1,40 @@
+Jenkins Installtion steps:-
+- Download jenkins packages. prefer LTS
+  $ sudo wget https://get.jenkins.io/debian-stable/jenkins_2.462.1_all.deb
+
+  - Check jenkins downloded or not
+  $ ls  
+
+- Update repositories
+  $ sudo apt update -y
+  $ sudo apt upgrade -y
+  
+- Install jdk & Jenkins
+  $ sudo apt install default-jre
+  $ sudo apt install default-jdk
+  $ sudo apt install openjdk-21-jdk
+  $ sudo dpkg -i jenkins_2.462.1_all.deb
+ 
+  - verify jdk & jenkins installed or not
+  $ sudo dpkg -l | grep jdk
+  $ sudo dpkg -l | grep jenkins
+
+-  launch jenkins
+  $ systemctl start jenkins
+  $ systemctl enable jenkins
+
+- Jenkins works on 8080 protocol & uses TCP protocol
+  To connect put -> Ip:8080 in browser
+
+- Login & set new password to admin user in jenkins
+  - Use below command to print the onetime password & login
+  $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+  - Close the plugin installation window
+  - Click on 'Mananage jenkins' on left panel
+  - scroll down & click on users
+  - click on admin, select configure on left panel
+  - scroll down, enter new password 
+  - click on 'Save'
+
+- Login in jenkins as username: 'admin' using new password
